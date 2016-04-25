@@ -1,0 +1,3 @@
+RESET QUERY CACHE;
+select * from frans006  where COD_CTRL > 0 ;
+
