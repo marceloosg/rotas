@@ -1,3 +1,3 @@
 RESET QUERY CACHE;
-select * from frans006  where COD_CTRL > 0 ;
+select * from frans006  where COD_CTRL = COD_CTRL ;
 

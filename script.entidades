@@ -1,2 +1,2 @@
 RESET QUERY CACHE;
-select * from entidades where Codigo > 0;
+select * from entidades where Codigo = Codigo;
