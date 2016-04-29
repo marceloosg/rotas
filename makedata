@@ -1,7 +1,0 @@
-nome=$1
-#for nome in entidades motoboy
-#do 
-test -n "$nome.csv" && yes=y r1 $nome.csv old/$nome.csv && echo moved $nome
-test -n "data/$nome.csv" && cat data/$nome.csv | sed "s/\t/;/g;s/EAACUTE;/Á/g;s/ECCEDIL;/Ç/g;"  > $nome.csv && echo ok $nome && convert.py $nome csv
-#done
-#(head -n 1 old/$nome.csv ; cat  /tmp/$nome.csv) 
