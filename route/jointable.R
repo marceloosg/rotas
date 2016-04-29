@@ -82,4 +82,4 @@ motocli=motocli[as.Date(motocli$DT_HO_ABRE,format("%d/%m/%Y")) >= as.Date("2016-
 enderecos=paste(motocli$TipoLogradouro,motocli$Endereco ,motocli$NumRua,",",motocli$Bairro,
                 ",",motocli$Cidade,", São Paulo, Brasil")
 library(xlsx)
-write.xlsx(aconferir,"aconferir.xlsx")
+write.xlsx(aconferir,"../xlsx/aconferir.xlsx")
