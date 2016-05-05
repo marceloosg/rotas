@@ -9,7 +9,7 @@ clientes$Telefone=gsub("-| Telefone|^11","",(cliente$Telefone))
 clientes$Telefone=as.double(clientes$Telefone)
 clientes=filter(clientes,Cidade=="SAO PAULO",Estado=="SP",Cep!="0000-000")
 clientes=unique(clientes,by="Telefone")
-moto$TelCli=gsub("^11","",(moto$TelCli))
+moto$TelCli=gsub("(^0|^)11","",motos$TelCli)
 moto$TelCli=as.double(moto$TelCli)
 telefones=setdiff(unique(moto$TelCli),clientes$Telefone)
 moto$A_Conferir="Não"
