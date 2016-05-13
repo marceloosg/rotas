@@ -1,6 +1,7 @@
 #!/usr/bin/Rscript
 source("openfiles.R")
-source("jointable.R")
+source("joinonly.R")
+#source("jointable.R")
 source("route.R")
 #library(ggmap)
 #verdure <- get_map(location = "Dr Clovis de Oliveira,339, São Paulo,São Paulo,Brazil", 

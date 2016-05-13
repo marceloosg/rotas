@@ -1,3 +1,4 @@
+library(digest)
 motos=motoboy[motoboy$Entregador!="" ,]
 motos=motos[motos$FLAG_CANC=="*" ,]
 motos=motos[motos$Entregador!="CLIENTE RETIRA" ,]
@@ -5,7 +6,7 @@ motos=motos[grep("TESTE",toupper(motos$Cliente),invert=TRUE),]
 motos$TelCli=gsub("(^0|^)11","",motos$TelCli)
 moto=motos
 clientes=cliente
-clientes=filter(clientes,Estado=="SP" & Cidade=="SAO PAULO" & cep!="0000-000")
+clientes=filter(clientes,Estado=="SP"  & Cep!="0000-000")
 clientes$Telefone=gsub("(^0|^)11","",clientes$Telefone)
 moto=moto[as.Date(moto$DT_HO_ABRE,format("%d/%m/%Y")) >= as.Date(changedate),]
 motocli=merge(moto,clientes,by.x="COD_CTRL",by.y="cod_ctrl",all.x = TRUE)

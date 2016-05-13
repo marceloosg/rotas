@@ -1,6 +1,7 @@
 library(data.table)
 library(plyr)
 library(dplyr)
+library(xlsx)
 #filtro de pedidos - eliminando retiradas e pedidos testes
 startdate="2016-02-01"
 changedate="2016-03-01"

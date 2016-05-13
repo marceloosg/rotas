@@ -34,6 +34,9 @@ makesum=function(mm,nome){
                         }))
                 if(dim(raw)[1] >0){
                         write.xlsx(raw,paste0("clientes/clientes_perdidos_semcadastro_",nome,".xlsx"))
+                     #   r=raw[!is.na(E_Mail)]
+                     #   if(dim(r)[1] >0){
+                    #    write.csv(r[,]$E_Mail,"clientes/mail_list.csv")}
                 }
                 else
                 {
@@ -56,6 +59,9 @@ makesum=function(mm,nome){
                 }))
                 if(dim(raw)[1] >0){
                         write.xlsx(raw,paste0("clientes/clientes_perdidos_cadastrados_",nome,".xlsx"))
+                        r=raw[!is.na(E_Mail)]
+                              if(dim(r)[1]>0){
+                        write.csv(r$E_Mail,"clientes/mail_list.csv")}
                 }
                 leftover=setdiff(webcli,raw$cod_cli)
                 if(length(leftover)>0)

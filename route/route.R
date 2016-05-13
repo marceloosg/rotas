@@ -130,8 +130,9 @@ selecao=select(tfinal,Endereco,short,
                DINHEIRO,	VALE_REF,			CARTAO,
                OUTROS,	Desconto=VLR_DESC_TOT,	Taxa_de_Entrega=VLR_SERV,
                Canal=NomeArquivoWeb,TipoLogradouro,	Endereco, Endereco_Considerado,	
-               NumRua	,ComplEnd,Obs, E_Mail,	Bairro,	Cidade,	Estado,	Cep,
+               NumRua, ComplEnd,Obs,E_Mail,	Bairro,	Cidade,	Estado,	Cep,
                 Tempo_Preparo,Tempo_Entrega,lat,lon,HrSaida,HrVolta,Pesquisa_Google=addr)
+#removed,
 stat=FALSE
 sprint=selecao
 sprint$Data_Pedido=as.Date(sprint$Data_Pedido,format("%d/%m/%Y"))
@@ -148,13 +149,14 @@ write.xlsx(sprint,output)
 file.copy(output,paste0("xlsx/distancia-min-pedidos-resumido.xlsx"),overwrite=TRUE)
 
 #write.xlsx(sprint,"xlsx/distancia-min-pedidos-resumido.xlsx",append=stat)
-write.xlsx(routecache,paste0("xlsx/distancia-min-enderecos-",today,".xlsx"),append=stat)
+#write.xlsx(routecache,paste0("xlsx/distancia-min-enderecos-",today,".xlsx"),append=stat)
 #write.xlsx(routecache,"xlsx/distancia-min-enderecos.xlsx",append=stat)
-output=paste0("distancia-min-enderecos-",today,".xlsx")
+output=paste0("xlsx/distancia-min-enderecos-",today,".xlsx")
 
 write.xlsx(routecache,output)
 file.copy(output,paste0("xlsx/distancia-min-enderecos-cep.xlsx"),overwrite=TRUE)
 options(oldopt)
+write.csv(today,"uptodate")
 #
 #qmplot(lon, lat, data = tfinal,geom = c("point"), size = as.double(VLR_TOTAL),alpha=0)+  geom_density2d(data = tfinal, aes(x = lon, y = lat)) + stat_density2d(data = tfinal, aes(x = lon, y = lat,  fill = ..level.., alpha=sqrt(..level..)/3 ), geom = 'polygon',alpha=0.2)+scale_fill_gradient(low = "white", high = "red")  +geom_jitter(data=tfinal, aes(x = lon, y = lat),alpha=min(as.double(km)/20,1),color="green")
 #final=select(motocli,Entregador,Endereco=enderecos,Cep,Cliente,TelCli)

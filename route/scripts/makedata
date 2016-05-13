@@ -1,4 +1,5 @@
 nome=$1
+echo making data $nome
 #for nome in entidades motoboy
 #do 
 test -n "$nome.csv" && yes=y r1 $nome.csv old/$nome.csv && echo moved $nome
